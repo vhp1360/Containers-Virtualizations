@@ -8,6 +8,13 @@ how to make docker image of running linux redhat OS:
     cat /mnt/RHEL7.2-base.tar.gz | docker import - RHEL7.2/7.2
     docker run -i -t RHEL7.2/7.2 /bin//bash
 
+run ssh
+
+    yum install openssh-server -y --nogpgcheck
+    /usr/sbin/sshd-keygen
+    /usr/sbin/sshd
+    
+
 <div dir="rtl"></div>
 <div dir="rtl"></div>
 
