@@ -10,7 +10,7 @@ how to make docker image of running linux redhat OS:
 
 run ssh
 
-    yum install openssh-server -y --nogpgcheck
+    yum install openssh-server openssh openssh-client -y --nogpgcheck
     /usr/sbin/sshd-keygen
     /usr/sbin/sshd
     
