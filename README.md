@@ -23,6 +23,18 @@
 ```
    docker cp Files `docker images name`:Path/FileNam
 ``` 
+- some commands
+```
+   service docker start
+   docker images
+   docker ps
+   docker cp /Files to Copy 149805c9921d:/root/
+   docker commit 149805c9921d docker-couchbase/01
+   docker images
+   docker run -h HostName -i -t docker-Image /bin/bash
+   docker commit 4619e3893ed5 DockerName/No
+   
+```
 
 <div dir="rtl"></div>
 <div dir="rtl"></div>
