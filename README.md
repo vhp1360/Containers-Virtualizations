@@ -24,17 +24,23 @@
    docker cp Files `docker images name`:Path/FileNam
 ``` 
 - some commands
-```
+```go
    service docker start
    docker images
    docker ps
+   docker ps -a --> it gaves some report of containers may you run and exit them but they still busy.
+   docker stop ContainerID
+   docker kill ContainerID
+   docker rm ContainerID
    docker cp /Files to Copy 149805c9921d:/root/
    docker commit 149805c9921d docker-couchbase/01
    docker images
    docker run -h HostName -i -t docker-Image /bin/bash
    docker commit 4619e3893ed5 DockerName/No
-   
 ```
+- Link a container and some issues:
+   - Howto Named a container : `docker run -d --name NewName ContainerName`.
+   - Howto Linked : `docker run -d --link "AboveName" ...`.
 
 <div dir="rtl"></div>
 <div dir="rtl"></div>
