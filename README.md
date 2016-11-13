@@ -3,24 +3,24 @@
 <div dir="rtl">چگونه از یک لینوکس ردهت درحال اجرا یک داکر بسازیم نسخه ۱.۱۰.۳</div>
 
 - how to make docker image of running linux redhat OS:
-```
+```go
    tar --numeric-owner --exclude=/proc --exclude=/sys --exclude=/mnt --exclude=/var/cache \
        --exclude=/usr/share/doc --exclude=/tmp --exclude=/var/log -zcvf /mnt/RHEL7.2-base.tar.gz /
    cat /mnt/RHEL7.2-base.tar.gz | docker import - RHEL7.2/7.2
-   docker run -i -t RHEL7.2/7.2 /bin//bash
+   docker run -i -t RHEL7.2/7.2 /bin/bash
 ```
 - run ssh
-```
+```ruby
    yum install openssh-server openssh openssh-client -y --nogpgcheck
    /usr/sbin/sshd-keygen
    /usr/sbin/sshd
 ```
 - send command to running container
-```
+```go
    docker exec `docker ps ID` Command
 ```
 - how to copy a file to running container
-```
+```go
    docker cp Files `docker images name`:Path/FileNam
 ``` 
 - some commands
