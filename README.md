@@ -37,6 +37,8 @@
    docker images
    docker run -h HostName -i -t docker-Image /bin/bash
    docker commit 4619e3893ed5 DockerName/No
+   
+   umount /var/lib/docker/devicemapper/mnt/656cfd09aee399c8ae8c8d3e7...
 ```
 - Link a container and some issues:
    - Howto Named a container : `docker run -d --name NewName ContainerName`.
