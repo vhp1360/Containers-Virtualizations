@@ -37,6 +37,8 @@
    docker images
    docker run -h HostName -i -t docker-Image /bin/bash
    docker commit 4619e3893ed5 DockerName/No
+   docker run -p HostPort:ContainerPort -it ...
+   docker export ContainerID -o ExportContainerName
    
    umount /var/lib/docker/devicemapper/mnt/656cfd09aee399c8ae8c8d3e7...
 ```
