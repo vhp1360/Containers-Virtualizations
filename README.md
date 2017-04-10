@@ -39,6 +39,8 @@
    docker commit 4619e3893ed5 DockerName/No
    docker run -p HostPort:ContainerPort -it ...
    docker export ContainerID -o ExportContainerName
+   docker tag ContainerID ContainerName <- after Import container, New Container has None Name
+   
    
    umount /var/lib/docker/devicemapper/mnt/656cfd09aee399c8ae8c8d3e7...
 ```
