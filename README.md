@@ -40,14 +40,20 @@
    docker run -p HostPort:ContainerPort -it ...
    docker export ContainerID -o ExportContainerName
    docker tag ContainerID ContainerName <- after Import container, New Container has None Name
-   
+   docker run -v /path/to/host:/path/to/container ...
    
    umount /var/lib/docker/devicemapper/mnt/656cfd09aee399c8ae8c8d3e7...
 ```
 - Link a container and some issues:
    - Howto Named a container : `docker run -d --name NewName ContainerName`.
    - Howto Linked : `docker run -d --link "AboveName" ...`.
-
+- Install some packages into container:
+  - pip3:
+    ```go
+      wget https://raw.githubusercontent.com/pypa/pip/701a80f451a62aadf4eeb21f371b45424821582b/contrib/get-pip.py -O /root/get-pip.py
+      python3.4 /root/get-pip.py
+    ```
+  - 
 <div dir="rtl"></div>
 <div dir="rtl"></div>
 
