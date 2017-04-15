@@ -18,7 +18,7 @@
 - send command to running container
 ```go
    docker exec `docker ps ID` Command
-   docker exec `docker ps ID` /bin/bash <- connet to running container
+   docker exec -it `docker ps ID` /bin/bash <- connet to running container
 ```
 - connect to running container with the same Output Terminal
 ```go
