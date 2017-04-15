@@ -10,7 +10,7 @@
    docker run -i -t RHEL7.2/7.2 /bin/bash
 ```
 - run ssh
-```ruby
+```go
    yum install openssh-server openssh openssh-client -y --nogpgcheck
    /usr/sbin/sshd-keygen
    /usr/sbin/sshd
@@ -18,6 +18,12 @@
 - send command to running container
 ```go
    docker exec `docker ps ID` Command
+   docker exec `docker ps ID` /bin/bash <- connet to running container
+```
+- connect to running container with the same Output Terminal
+```go
+  docker run --name ContainerName
+  docker attach `docker ps ID Or ContainerName`
 ```
 - how to copy a file to running container
 ```go
