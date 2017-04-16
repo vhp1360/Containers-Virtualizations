@@ -59,7 +59,18 @@
       wget https://raw.githubusercontent.com/pypa/pip/701a80f451a62aadf4eeb21f371b45424821582b/contrib/get-pip.py -O /root/get-pip.py
       python3.4 /root/get-pip.py
     ```
-  - 
+  - remove images:
+  ```go
+    docker rmi -f ContainerIDs
+  ```
+    - may you faced issue like _docker: Error response from daemon: devmapper: Thin Pool has 142989 free data blocks \
+       which is less than minimum required 163840 free data blocks. Create more free space in thin pool or use \
+       dm.min_free_space option to change behavior._ then you should try:
+       ```go
+         docker rm $(docker ps -q -f status=exited)
+         docker volume rm $(docker volume ls -qf dangling=true)
+         docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+       ```
 <div dir="rtl"></div>
 <div dir="rtl"></div>
 
