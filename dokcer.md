@@ -1,7 +1,19 @@
 <div dir="rtl">بنام خدا</div>
 
-<div dir="rtl">چگونه از یک لینوکس ردهت درحال اجرا یک داکر بسازیم نسخه ۱.۱۰.۳</div>
+###### top
+-[Make Container from LiveOS](#make-container-from-liveos)
+-[Send Command to Container](#send-command-to-container)
+-[Some Regulare Code](#some-regulare-code)
+-[Rmove,Delete](#rmove,delete)
+-[Run,Attach](#run,attach)
+-[Ps](#ps)
+-[Commit,Export,Import,Save](#commit,export,import,save)
 
+
+[top](#top)
+### Make Container from LiveOS
+
+<div dir="rtl">چگونه از یک لینوکس ردهت درحال اجرا یک داکر بسازیم نسخه ۱.۱۰.۳</div>
 - how to make docker image of running linux redhat OS:
 ```go
    tar --numeric-owner --exclude=/proc --exclude=/sys --exclude=/mnt --exclude=/var/cache \
@@ -9,6 +21,8 @@
    cat /mnt/RHEL7.2-base.tar.gz | docker import - RHEL7.2/7.2
    docker run -i -t RHEL7.2/7.2 /bin/bash
 ```
+
+### Send Command to Container
 - run ssh
 ```go
    yum install openssh-server openssh openssh-client -y --nogpgcheck
@@ -29,6 +43,8 @@
 ```go
    docker cp Files `docker images name`:Path/FileNam
 ``` 
+[top](#top)       
+### Some Regulare Code
 - some commands
 ```go
    service docker start
@@ -59,7 +75,9 @@
       wget https://raw.githubusercontent.com/pypa/pip/701a80f451a62aadf4eeb21f371b45424821582b/contrib/get-pip.py -O /root/get-pip.py
       python3.4 /root/get-pip.py
     ```
-  - remove images:
+[top](#top)       
+### Rmove,Delete
+- remove images:
   ```go
     docker rmi -f ContainerIDs
   ```
@@ -71,8 +89,8 @@
          docker volume rm $(docker volume ls -qf dangling=true)
          docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
        ```
-<div dir="rtl"></div>
-<div dir="rtl"></div>
-
+       
+[top](#top)       
+### Run,Attach
 
 
