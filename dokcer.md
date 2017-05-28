@@ -96,14 +96,33 @@
      docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
    ```
 - Purne:
-```vim
+```go
   docker system prune
 ```
 - Autoremove container when you exit it:
-```vim
+```go
   docker run -it --rm 
 ```
+
+
 [top](#top)       
 ### Run,Attach
+- keep alive container every time
+```go
+  docker run --restart=always ...
+  docker run --restart=on-failure:10 ... <- restart maximum 10 times on failure state
+```
+- Use Special Network:
+```go
+  docker run --net=host ...  <- Host
+  docker run --net=container:<name|id> ... <- Use Container Network
+```
+
+
+
+
+
+
+
 
 
