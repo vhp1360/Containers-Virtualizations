@@ -84,18 +84,25 @@
 [top](#top)       
 ### Rmove,Delete
 - remove images:
-  ```go
-    docker rmi -f ContainerIDs
-  ```
-    - may you faced issue like _docker: Error response from daemon: devmapper: Thin Pool has 142989 free data blocks \
-       which is less than minimum required 163840 free data blocks. Create more free space in thin pool or use \
-       dm.min_free_space option to change behavior._ then you should try:
-       ```go
-         docker rm $(docker ps -q -f status=exited)
-         docker volume rm $(docker volume ls -qf dangling=true)
-         docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
-       ```
-       
+```go
+  docker rmi -f ContainerIDs
+```
+   - may you faced issue like _docker: Error response from daemon: devmapper: Thin Pool has 142989 free data blocks \
+      which is less than minimum required 163840 free data blocks. Create more free space in thin pool or use \
+      dm.min_free_space option to change behavior._ then you should try:
+   ```go
+     docker rm $(docker ps -q -f status=exited)
+     docker volume rm $(docker volume ls -qf dangling=true)
+     docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+   ```
+- Purne:
+```vim
+  docker system prune
+```
+- Autoremove container when you exit it:
+```vim
+  docker run -it --rm 
+```
 [top](#top)       
 ### Run,Attach
 
