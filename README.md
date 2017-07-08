@@ -1,6 +1,6 @@
 <div dir=rtl>بنام خدا </div>
 
-یادداشتهایی درمورد داکر
+یادداشتهایی درمورد انواع کانتینر
 
-Some note regarding DOCKER
+Some note regarding Containers
 
