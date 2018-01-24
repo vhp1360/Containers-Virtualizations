@@ -10,6 +10,8 @@
 - [Run,Attach](#runattach)
 - [Ps](#ps)
 - [Commit,Export,Import,Save](#commitexportimportsave)
+- [Resolving Some Errors](#resolving-some-errors)
+
 
 
 [top](#top)
@@ -118,6 +120,15 @@
   docker run --net=container:<name|id> ... <- Use Container Network
 ```
 
+[top](#top)
+### Resolving Some Errors:
+
+- [Docker “ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults \
+   to assign to the network”](https://stackoverflow.com/questions/43720339/docker-error-could-not-find-an-available-non-overlapping-ipv4-address-pool-am)
+```vim
+  docker network ls
+  docker network rm $(docker network ls | grep -v "bridge" | awk '/ / { print $1 }')
+```
 
 
 
