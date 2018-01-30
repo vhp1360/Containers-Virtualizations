@@ -129,7 +129,19 @@
   docker network ls
   docker network rm $(docker network ls | grep -v "bridge" | awk '/ / { print $1 }')
 ```
-
+- [Unable to create docker0 if VPN is active · Issue #779 · docker/libnetwork](https://github.com/docker/libnetwork/issues/779#issuecomment-231727303)
+```vim
+   openvpn --config vpn_config_file --route-up fix-routes.sh
+ ```
+   - or script like this:
+   ```vim
+      #!/bin/sh
+      echo "Adding default route to $route_vpn_gateway with /0 mask..."
+      ip route add default via $route_vpn_gateway
+      echo "Removing /1 routes..."
+      ip route del 0.0.0.0/1 via $route_vpn_gateway
+      ip route del 128.0.0.0/1 via $route_vpn_gateway
+   ```
 
 
 
